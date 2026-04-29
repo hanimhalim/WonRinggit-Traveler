@@ -7,6 +7,14 @@
     margin-top: 50px;
     font-family: 'Poppins', sans-serif;
     text-align: center;
+
+    /* This centers your card horizontally */
+  max-width: 450px; /* Stops it from being too wide */
+  margin: 50px auto; /* The "auto" magic centers it horizontally */
+
+  /* This makes it look like a modern 'Traveler' card */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);/*Add a subtle shadow */
+  text-align: center;
     
 }
 
