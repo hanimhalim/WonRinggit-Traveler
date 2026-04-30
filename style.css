@@ -15,6 +15,10 @@
   /* This makes it look like a modern 'Traveler' card */
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);/*Add a subtle shadow */
   text-align: center;
-    
+  
+  display: flex;
+  flex-direction: column; /* Keeps items stacked vertically for now */
+  align-items: center; /* Ensures everything inside is perfectly centered */
+  gap: 10px; /* Adds a small, clean space between your title and amount */
 }
 
