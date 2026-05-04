@@ -17,8 +17,9 @@
   text-align: center;
   
   display: flex;
-  flex-direction: column; /* Keeps items stacked vertically for now */
+  /* flex-direction: column; Keeps items stacked vertically for now */
+  flex-direction: row;
   align-items: center; /* Ensures everything inside is perfectly centered */
-  gap: 10px; /* Adds a small, clean space between your title and amount */
-  justify-content: space-around;
+  gap: 20px; /* Adds a small, clean space between your title and amount */
+  justify-content:space-between;
 }
