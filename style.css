@@ -18,8 +18,16 @@
   
   display: flex;
   /* flex-direction: column; Keeps items stacked vertically for now */
-  flex-direction: row;
+  flex-direction: row;/* The Horizontal Direction */
   align-items: center; /* Ensures everything inside is perfectly centered */
   gap: 20px; /* Adds a small, clean space between your title and amount */
-  justify-content:space-between;
+  justify-content:space-between; /* Horizontal Spacing*/
+}
+
+/* This targets the card only when the mouse is over it */
+.header:hover {
+  background-color: #fff9c4; /* A slightly lighter yellow */
+  transform: translateY(-5px); /* translateY Makes the card "pop" up slightly */
+  transition: 0.3s; /* Makes the movement smooth, not jumpy */
+  cursor: pointer; /* Changes the mouse to a hand icon */
 }
