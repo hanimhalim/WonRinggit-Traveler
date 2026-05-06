@@ -31,3 +31,11 @@
   transition: 0.3s; /* Makes the movement smooth, not jumpy */
   cursor: pointer; /* Changes the mouse to a hand icon */
 }
+
+/* This stacks RM and Won vertically */
+.currency-display {
+  display: flex;
+  flex-direction: column; /* Stacks RM and Won vertically */
+  align-items: flex-end; /* This pushes the text to the right edge */
+  gap: 4px;              /* Adds a tiny clean space between the lines */
+}
