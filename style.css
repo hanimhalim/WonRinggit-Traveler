@@ -39,3 +39,33 @@
   align-items: flex-end; /* This pushes the text to the right edge */
   gap: 4px;              /* Adds a tiny clean space between the lines */
 }
+
+.input-section {
+  display: flex;
+  flex-direction: row; /* Keep them in a line */
+  justify-content: center; /* Center the whole section */
+  align-items: center; /* Align them vertically */
+  gap: 15px; /* Give them breathing room */
+  margin-top: 30px; /* Push it away from the header */
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-btn {
+  padding: 8px 15px;
+  background-color: #2e7d32; /* A matching green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
