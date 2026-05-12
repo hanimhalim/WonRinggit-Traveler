@@ -7,6 +7,14 @@ function calculateExpenses() {
     const wonValue = Number(wonInput.value); // Convert the text to a real Number
     const rate = 0.0034;
     
+    // --- THE GATEKEEPER ---
+    if (wonValue <= 0 || isNaN(wonValue)) {
+        alert("Please enter a valid amount in Won!");
+        wonInput.focus();
+        return; // This "kills" the function here so no math happens
+    }
+    // -----------------------
+
     // 2. Add the NEW value to the OLD total (The += trick)
     totalWon += wonValue; 
     totalRM += (wonValue * rate);
