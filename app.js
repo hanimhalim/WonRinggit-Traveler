@@ -22,6 +22,18 @@ function calculateExpenses() {
     //NEW: Save this specific expense into our history list
     expenseHistory.push(wonValue);
 
+    // 1. Grab the empty list from HTML
+    const listDisplay = document.getElementById("expense-list");
+
+    // 2. Create a new "li" element in memory
+    const newEntry = document.createElement("li");
+
+    // 3. Put text inside that new element
+    newEntry.textContent = "₩ " + wonValue + " (RM " + (wonValue * 0.0034).toFixed(2) + ")";
+
+    // 4. "Attach" it to our list on the screen
+    listDisplay.appendChild(newEntry);
+
     //Update the UI with the Cumulative total
     document.getElementById("total-rm-display").textContent = "Total Spent: RM " + totalRM.toFixed(2);
     document.getElementById("total-won-display").textContent = "Total Spent: ₩ " + totalWon + " (RM " + totalRM.toFixed(2) + ")";

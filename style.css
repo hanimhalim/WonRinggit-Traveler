@@ -69,3 +69,20 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
+
+#expense-list {
+    list-style-type: none; /* Removes the bullet points */
+    padding: 0;
+    margin-top: 15px;
+    max-width: 300px;
+}
+
+#expense-list li {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 5px solid #2e7d32; /* That nice green color you used for the button */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-family: 'Courier New', Courier, monospace; /* Makes it look like a real receipt! */
+}
