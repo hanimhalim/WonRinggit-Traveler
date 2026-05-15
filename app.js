@@ -1,14 +1,14 @@
 //Declare these OUTSIDE the function so they don't reset to 0 every click
 let totalWon = 0;
 let totalRM = 0;
-let expenseHistory = []; // Our new "Shopping List" array
+let expenseHistory = []; // Global state to keep track of all spending
 
 function calculateExpenses() {
     const wonInput = document.getElementById("won-input");
     const wonValue = Number(wonInput.value); // Convert the text to a real Number
     const rate = 0.0034;
     
-    // --- THE GATEKEEPER ---
+    // The Gatekeeper: prevents empty or negative numbers
     if (wonValue <= 0 || isNaN(wonValue)) {
         alert("Please enter a valid amount!");
         return; // This "kills" the function here so no math happens
@@ -48,3 +48,10 @@ function calculateExpenses() {
 
 // This line tells the button to trigger the brain when clicked
 document.querySelector(".add-btn").addEventListener("click", calculateExpenses);
+
+// Allow the user to press "Enter" instead of clicking the button
+document.getElementById("won-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        calculateExpenses();
+    }
+});
