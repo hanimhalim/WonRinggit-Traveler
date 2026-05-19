@@ -44,6 +44,21 @@ function calculateExpenses() {
      //Clear and refocus
     wonInput.value = "";
     wonInput.focus();
+
+    // ================= NEW CODE STARTS HERE =================
+
+    // 3. Create a Delete Button out of thin air
+    const deleteBtn = document.createElement("button");
+    deleteBtn.textContent = "X";
+    deleteBtn.classList.add("delete-btn"); // Adding a class so we can style it later
+
+    // 4. Put the button INSIDE the li item
+    newEntry.appendChild(deleteBtn);
+
+    // ================= NEW CODE ENDS HERE =================
+
+    // 5. Attach the whole li (with the button inside it) to our UI list
+    listDisplay.appendChild(newEntry);
 }
 
 // This line tells the button to trigger the brain when clicked
