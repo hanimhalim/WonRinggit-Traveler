@@ -45,6 +45,9 @@ function calculateExpenses() {
     wonInput.value = "";
     wonInput.focus();
 
+    // Stamp the current index number onto the HTML element itself!
+    newEntry.dataset.index = expenseHistory.length - 1;
+
     // ================= NEW CODE STARTS HERE =================
 
     // 3. Create a Delete Button out of thin air
@@ -68,5 +71,44 @@ document.querySelector(".add-btn").addEventListener("click", calculateExpenses);
 document.getElementById("won-input").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         calculateExpenses();
+    }
+});
+
+// Listen for clicks inside the entire transaction history list
+document.getElementById("expense-list").addEventListener("click", function(event) {
+    
+    // 1. Check if the user specifically clicked an "X" button
+    if (event.target.classList.contains("delete-btn")) {
+        
+        // 2. Grab the entire <li> element that holds this specific button
+        const listItem = event.target.parentElement;
+        const listDisplay = document.getElementById("expense-list"); 
+        
+       // ======= NEW LOGIC STARTS HERE =======
+        
+        // 3.Find the index dynamically by looking at its position in the list
+        // Array.from() turns the HTML collection of elements into a real array so we can use indexOf
+        const targetIndex = Array.from(listDisplay.children).indexOf(listItem);
+        
+        // 4. Grab the amount we want to remove from our totals before we destroy it
+        const amountToRemove = expenseHistory[targetIndex];
+        
+        // 5. Update our global math variables downward
+        totalWon -= amountToRemove;
+        totalRM -= (amountToRemove * 0.0034);
+        
+        // 6. Erase it from the array memory completely
+        expenseHistory.splice(targetIndex, 1);
+        
+        // 7. Update the UI text at the top with the new totals
+        document.getElementById("total-rm-display").textContent = "Total Spent: RM " + totalRM.toFixed(2);
+        document.getElementById("total-won-display").textContent = "Total Spent: ₩ " + totalWon + " (RM " + totalRM.toFixed(2) + ")";
+        
+        // =====================================
+        
+        // 8. Remove that <li> from the screen visually (You have this)
+        listItem.remove();
+        
+        console.log("Updated History after delete:", expenseHistory);
     }
 });
