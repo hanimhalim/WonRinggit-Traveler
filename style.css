@@ -86,3 +86,23 @@ input {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     font-family: 'Courier New', Courier, monospace; /* Makes it look like a real receipt! */
 }
+
+/* Style the Delete Button container */
+.delete-btn {
+    background-color: transparent;
+    color: #e74c3c; /* A clean, modern red */
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-left: auto; /* Magic trick: pushes the button to the absolute right side of the card! */
+    transition: all 0.2s ease; /* Smooth fade effect */
+}
+
+/* What happens when the mouse hovers over it */
+.delete-btn:hover {
+    background-color: #fce4e4; /* Soft pink background on hover */
+    transform: scale(1.1); /* Subtle pop-out animation */
+}
